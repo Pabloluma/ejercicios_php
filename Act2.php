@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="Act2.php" method = "post">
+<form action="resAct2.php" method = "post">
     <label >Distancia:</label><br>  
     <input type = "number" name = "distance">
     <br><label >Velocidad media:</label><br>
