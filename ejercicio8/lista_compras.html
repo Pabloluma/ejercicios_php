@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h3>Lista de la compra</h3>
+<form action="lista_compras.php" method = "post">
+    <label >Producto:</label><br>  
+    <input type = "text" name = "producto" id = "producto"><br>
+    <button type="button" onclick="agregarProducto()">Agregar</button>
+    <input type = "submit" value = "Finalizar">
+
+    <!-- Con hidden lo ocultamos, si le ponemos text podemos ver como se estan agregando -->
+    <input type="hidden" id="productosArray" name="productosArray">
+</form>
+<script>
+// Inicializamos el array
+var productos = [];
+
+// Función para agregar el producto al array y mostrarlo en la lista
+function agregarProducto() {
+    var productoInput = document.getElementById('producto').value;
+
+    if (productoInput != "") {
+        // Agregamos el valor del input al array
+        productos.push(productoInput);
+
+        // Vaciamos el input para que se pueda agregar un nuevo elemento
+        document.getElementById('producto').value = '';
+
+        // Pasamos el array a un JSON con String
+        document.getElementById('productosArray').value = JSON.stringify(productos);
+    }
+}
+
+</script>
+</body>
+</html>
